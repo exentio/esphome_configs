@@ -1,0 +1,7 @@
+*
+!*.gitignore
+!README.md
+!*.yaml
+secrets.yaml
+!*.jpg
+!*.png

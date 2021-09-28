@@ -1,0 +1,54 @@
+esphome:
+  name: h801_letto
+  platform: ESP8266
+  board: esp01_1m
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+  fast_connect: true
+
+  ap:
+    ssid: 'Barra letto'
+    password: !secret wifi_pass
+
+captive_portal:
+
+web_server:
+  port: 80
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+output:
+  - platform: esp8266_pwm
+    pin: 12
+    frequency: 1000 Hz
+    id: pwm_b
+  - platform: esp8266_pwm
+    pin: 13
+    frequency: 1000 Hz
+    id: pwm_r
+  - platform: esp8266_pwm
+    pin: 15
+    frequency: 1000 Hz
+    id: pwm_g
+  - platform: esp8266_pwm
+    pin: 4
+    frequency: 1000 Hz
+    id: pwm_w
+
+light:
+  - platform: rgbw
+    name: "Barra letto"
+    red: pwm_r
+    green: pwm_g
+    blue: pwm_b
+    white: pwm_w
+#    color_interlock: true
+    restore_mode: RESTORE_DEFAULT_OFF

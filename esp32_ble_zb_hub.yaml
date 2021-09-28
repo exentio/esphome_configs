@@ -1,0 +1,60 @@
+esphome:
+  name: esp32_ble_zb_hub
+  platform: ESP32
+  board: esp32dev
+  platformio_options: 
+    platform: espressif32
+    board: az-delivery-devkit-v4
+    board_build.mcu: esp32
+    board_build.f_cpu: 240000000L
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+  fast_connect: true
+
+  ap:
+    ssid: 'BLE+ZB Hub'
+    password: !secret wifi_pass
+
+captive_portal:
+
+web_server:
+  port: 80
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+# Enable Bluetooth scanning for this ESP32
+esp32_ble_tracker:
+
+sensor:
+  - platform: xiaomi_lywsd03mmc
+    mac_address: !secret xiaomi_temp_luca_mac
+    bindkey: !secret xiaomi_temp_luca_bindkey
+    temperature:
+      name: "Termometro camera Luca"
+    humidity:
+      name: "Umidità camera Luca"
+    battery_level:
+      name: "Batteria termometro camera Luca"
+
+# CC2531 serial connection
+# Serial to IP
+external_components:
+  - source: github://oxan/esphome-stream-server
+
+stream_server:
+  uart_id: uart_bus
+  port: 6638
+
+uart:
+  id: uart_bus
+  tx_pin: GPIO17
+  rx_pin: GPIO5
+  baud_rate: 115200

@@ -1,0 +1,69 @@
+esphome:
+  name: lampadario_luca
+  platform: ESP8266
+  board: esp01_1m
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+  fast_connect: true
+
+  ap:
+    ssid: 'Sonoff Lampadario Luca'
+    password: !secret wifi_pass
+
+captive_portal:
+
+web_server:
+  port: 80
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+status_led:
+  pin:
+    number: GPIO13
+    inverted: true
+
+output:
+  - platform: gpio
+    id: relay_1
+    pin: GPIO12
+
+light:
+  - platform: binary
+    id: light_1
+    name: 'Lampadario Luca'
+    output: relay_1    
+
+binary_sensor:
+  - platform: gpio
+    pin: GPIO00
+    id: reset
+    internal: true
+    filters:
+      - invert:
+      - delayed_off: 10ms
+    on_press:
+      - light.toggle: 
+          id: light_1
+
+  - platform: gpio
+    name: 'Interruttore lampadario Luca'
+    pin: GPIO04
+    id: switch_1
+    on_press:
+      then:
+#        - switch.turn_on:
+        - light.toggle: 
+            id: light_1
+    on_release:
+      then:
+#        - switch.turn_off:
+        - light.toggle: 
+            id: light_1
