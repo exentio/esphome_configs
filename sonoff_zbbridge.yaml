@@ -1,0 +1,40 @@
+esphome:
+  name: sonoff_zbbridge
+  platform: ESP8266
+  board: esp_wroom_02
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+  fast_connect: true
+
+  ap:
+    ssid: 'Sonoff ZBBridge'
+    password: !secret wifi_pass
+
+captive_portal:
+
+web_server:
+  port: 80
+
+logger:
+  baud_rate: 0 # disable serial logging; pins are used for zb module comm
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+# Serial to IP
+external_components:
+  - source: github://oxan/esphome-stream-server
+
+stream_server:
+  uart_id: uart_bus
+  port: 8888
+
+uart:
+  id: uart_bus
+  tx_pin: GPIO1
+  rx_pin: GPIO3
+  baud_rate: 115200 # matched to fw: ncp-uart-sw_6.7.9_115200.ota
