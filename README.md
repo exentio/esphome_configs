@@ -5,6 +5,7 @@
 **sonoff_lampadario_luca**: the Sonoff Mini that controls my room's light.  
 **esp32_ble_hub**: BLE hub made with an ESP32, mainly used to read data from a [Xiaomi Mijia LYWSD03MMC](https://esphome.io/components/sensor/xiaomi_ble.html#lywsd03mmc) with [this firmware](https://github.com/atc1441/ATC_MiThermometer).  
 **esp32_ble_zb_hub**: as above, plus a CC2531 that adds Zigbee functionality, I use it with an [OSRAM Smart+ Switch Mini](https://zigbee.blakadder.com/OSRAM_AC0251x00NJ.html).  
+**sonoff_zbbridge**: ESPhome firmware for the Sonoff Zigbee bridge. [Using this device is theoretically not recommended](https://github.com/home-assistant/home-assistant.io/issues/17170), but I don't care enough. I suggest following [the Tasmota procedure first](https://zigbee.blakadder.com/Sonoff_ZBBridge.html), then moving to ESPhome.  
 
 ### ESP32 BLE+Zigbee bridge
 I flashed a CC2531 dongle with a CC2530 firmware [from here](https://github.com/Koenkk/Z-Stack-firmware/tree/master/coordinator). Can't remember which one, but probably the [Z-Stack_Home_1.2 Default](https://github.com/Koenkk/Z-Stack-firmware/blob/master/coordinator/Z-Stack_Home_1.2/bin/default/CC2530_DEFAULT_20201127.zip).  
