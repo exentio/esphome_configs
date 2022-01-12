@@ -1,5 +1,5 @@
 esphome:
-  name: lampadario_luca
+  name: sonoff_lampadario_luca
   platform: ESP8266
   board: esp01_1m
 
@@ -48,7 +48,7 @@ binary_sensor:
     internal: true
     filters:
       - invert:
-      - delayed_off: 10ms
+      - delayed_off: 150ms
     on_press:
       - light.toggle: 
           id: light_1
