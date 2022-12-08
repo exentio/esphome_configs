@@ -22,6 +22,7 @@ logger:
 
 # Enable Home Assistant API
 api:
+  reboot_timeout: 0s
 
 ota:
 
@@ -59,3 +60,7 @@ light:
     cold_white_color_temperature: 6000 K
     color_interlock: true
     restore_mode: RESTORE_DEFAULT_OFF
+
+switch:
+  - platform: restart
+    name: "LED Scrivania Reboot"

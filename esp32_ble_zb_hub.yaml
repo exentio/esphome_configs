@@ -58,3 +58,7 @@ uart:
   tx_pin: GPIO17
   rx_pin: GPIO5
   baud_rate: 115200
+
+switch:
+  - platform: restart
+    name: "BLE+ZB Hub Reboot"

@@ -38,3 +38,7 @@ uart:
   tx_pin: GPIO1
   rx_pin: GPIO3
   baud_rate: 115200 # matched to fw: ncp-uart-sw_6.7.9_115200.ota
+
+switch:
+  - platform: restart
+    name: "Sooff ZBBridge Reboot"

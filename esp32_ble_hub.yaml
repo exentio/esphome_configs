@@ -2,7 +2,7 @@ esphome:
   name: esp32_ble_hub
   platform: ESP32
   board: esp32dev
-  platformio_options: 
+  platformio_options:
     platform: espressif32
     board: az-delivery-devkit-v4
     board_build.mcu: esp32
@@ -27,6 +27,7 @@ logger:
 
 # Enable Home Assistant API
 api:
+  reboot_timeout: 0s
 
 ota:
 
@@ -43,3 +44,7 @@ sensor:
       name: "Umidità camera Luca"
     battery_level:
       name: "Batteria termometro camera Luca"
+
+switch:
+  - platform: restart
+    name: "BLE Hub Reboot"

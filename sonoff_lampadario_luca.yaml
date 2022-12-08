@@ -22,6 +22,7 @@ logger:
 
 # Enable Home Assistant API
 api:
+  reboot_timeout: 0s
 
 ota:
 
@@ -67,3 +68,7 @@ binary_sensor:
 #        - switch.turn_off:
         - light.toggle: 
             id: light_1
+
+switch:
+  - platform: restart
+    name: "Lampadario Luca Reboot"
