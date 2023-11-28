@@ -22,7 +22,7 @@ the end it gets the jobs done so I can't complain.
 For reference, my config has GPIO3 set on PWM and set as channel 0 aka cold
 white, and GPIO4 on PWM set as channel 1 aka warm white. The firmware
 automatically set itself as a CCT controller.  
-CoB LEDs slap, btw, you should get some. [This is the strip I bought](https://it.aliexpress.com/item/1005005820131997.html),
+CoB LEDs slap, btw, you should get some. [This is the strip I bought](https://aliexpress.com/item/1005005820131997.html),
 the CCT 608LEDs 10mm 12V version, fits my alluminum channels no problem.  
 
 ### ESP32 BLE+Zigbee bridge
