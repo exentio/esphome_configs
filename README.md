@@ -48,7 +48,7 @@ use 5V instead if you feel like it, but I prefer not to mess with the USB port.
 ![](CC2531_pins.png)  
 
 I then added this in my zigbee2mqtt config (I'd prefer ZHA but it doesn't
-detect double presses):
+detect double presses on devices that don't have them in their firmware):
 
 ```
 serial:
