@@ -5,9 +5,8 @@
 **esp32_ble_hub**: BLE hub made with an ESP32, mainly used to read data from a
 [Xiaomi Mijia LYWSD03MMC](https://esphome.io/components/sensor/xiaomi_ble.html#lywsd03mmc)
 with [this firmware](https://github.com/atc1441/ATC_MiThermometer).  
-**esp32_ble_zb_hub**: as above, plus a CC2531 that adds Zigbee functionality, I
-used to use it with an [OSRAM Smart+ Switch Mini](https://zigbee.blakadder.com/OSRAM_AC0251x00NJ.html)
-before moving to this [Raspberry Pi hat](https://github.com/egony/cc2652p_E72-2G4M20S1E/wiki/Home-EN#shield-pi-hat-for-single-board-computers).  
+**esp32_ble_zb_hub**: as above, plus Zigbee functionality, I use it with this [Raspberry Pi hat](https://github.com/egony/cc2652p_E72-2G4M20S1E/wiki/Home-EN#shield-pi-hat-for-single-board-computers)
+since my new server has no GPIO unlike my previous Raspberry Pi 3.  
 **sonoff_zbbridge**: ESPhome firmware for the Sonoff Zigbee bridge. [Using this device is theoretically not recommended](https://github.com/home-assistant/home-assistant.io/issues/17170),
 and it has been giving me many issues. If you really want to, I suggest
 following [the Tasmota procedure first](https://zigbee.blakadder.com/Sonoff_ZBBridge.html), then moving to ESPhome.  
