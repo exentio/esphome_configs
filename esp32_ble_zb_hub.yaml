@@ -34,15 +34,26 @@ ota:
 esp32_ble_tracker:
 
 sensor:
-  - platform: xiaomi_lywsd03mmc
+#  - platform: xiaomi_lywsd03mmc
+  - platform: atc_mithermometer
     mac_address: !secret xiaomi_temp_luca_mac
-    bindkey: !secret xiaomi_temp_luca_bindkey
+#    bindkey: !secret xiaomi_temp_luca_bindkey
     temperature:
       name: "Termometro camera Luca"
     humidity:
       name: "Umidità camera Luca"
     battery_level:
       name: "Batteria termometro camera Luca"
+#  - platform: xiaomi_lywsd03mmc
+  - platform: atc_mithermometer
+    mac_address: !secret xiaomi_temp_cucina_mac
+#    bindkey: !secret xiaomi_temp_cucina_bindkey
+    temperature:
+      name: "Termometro cucina"
+    humidity:
+      name: "Umidità cucina"
+    battery_level:
+      name: "Batteria termometro cucina"
 
 # CC2531 serial connection
 # Serial to IP

@@ -1,6 +1,7 @@
 # ESPhome configs
 
 **h801_letto**: the RGBCCT LED bar on my bed.  
+**h801_tv_cucina**: the CCT LED bar behind the TV in the kitchen.  
 **sonoff_lampadario_luca**: the Sonoff Mini that controls my room's light.  
 **esp32_ble_hub**: BLE hub made with an ESP32, mainly used to read data from a
 [Xiaomi Mijia LYWSD03MMC](https://esphome.io/components/sensor/xiaomi_ble.html#lywsd03mmc)
@@ -23,7 +24,8 @@ For reference, my config has GPIO3 set on PWM and set as channel 0 aka cold
 white, and GPIO4 on PWM set as channel 1 aka warm white. The firmware
 automatically set itself as a CCT controller.  
 CoB LEDs slap, btw, you should get some. [This is the strip I bought](https://aliexpress.com/item/1005005820131997.html),
-the CCT 608LEDs 10mm 12V version, fits my alluminum channels no problem.  
+the CCT 608LEDs 10mm 12V version, fits my alluminum channels no problem.
+I used the same LEDs for `h801_tv_cucina`.  
 
 ### ESP32 BLE+Zigbee bridge
 For my first hub I flashed a CC2531 dongle with a CC2530 firmware [from here](https://github.com/Koenkk/Z-Stack-firmware/tree/master/coordinator).
